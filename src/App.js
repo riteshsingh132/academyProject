@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider } from "react-router";
+
+
+
+import Mainproj5 from "./project5/Mainproj5";
+
+
+import { UserProvider } from "./project5/context/UserContext";
+
+
+
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+<div>
+  
+    <UserProvider>
+    <Mainproj5/>
+    </UserProvider>
+    {/* <Main/> */}
     </div>
   );
 }
