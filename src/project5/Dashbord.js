@@ -30,6 +30,10 @@ console.log(user)
         navigateR("/applyleave")
     }
 
+    const approveCount=apldata.filter((item)=> item.leavestatus == "Approved").length
+    const rejectCount=apldata.filter((item)=> item.leavestatus1 == "Rejected").length
+    const pendingCount=apldata.filter((item)=> item.leavestatus == "Pending").length
+
     return (
 
         <div style={{ marginTop: "100px" }}>
@@ -41,16 +45,21 @@ console.log(user)
                 <Button onClick={applyLeaveHandle} style={{ margin: "20px 20px" }} variant='contained'>ApplyLeave</Button>
 
             </div>
-            {/* <div className='container d-flex mt-1 mb-5 gap-4' style={{ textAlign: "center", margin: " 0 auto", gap:"20px" }} >
-                <div>
-                    <h4>10</h4>
-                    Total Leave
+            <div className='container d-flex mt-4 mb-5 gap-4' style={{ textAlign: "center", margin: " 0 auto", gap:"20px" }} >
+                <div style={{border:"1px solid #ccc",borderRadius:"5px",padding:"5px 10px" ,width:"200px"}}>
+                    <h3>{apldata.length}</h3>
+                    <h3>Total Leave</h3>
                 </div>
-                <div><h4>5</h4>
-                    Approved</div>
-                <div><h4>3</h4>
-                    Cancled</div>
-            </div> */}
+                <div style={{color:"green" ,border:"1px solid #ccc",borderRadius:"5px",padding:"5px 10px" ,width:"200px"}}><h3>{approveCount}</h3>
+                    <h3>Approved</h3>
+                </div>
+                <div style={{color:"red" ,border:"1px solid #ccc",borderRadius:"5px",padding:"5px 10px" ,width:"200px"}}><h3>{rejectCount}</h3>
+                    <h3>Cancled</h3>
+                </div>
+                <div style={{color:"blue",border:"1px solid #ccc",borderRadius:"5px",padding:"5px 10px" ,width:"200px"}}><h3>{pendingCount}</h3>
+                    <h3>Pending</h3>
+                </div>
+            </div>
             <div className='container d-flex mb-5 justify-content-center col-12 flex-wrap' >
 
                 {apldata !== [] && apldata?.map((item) => {
@@ -66,7 +75,7 @@ console.log(user)
 
                         <h5>Reason:<span>{item.leavereason}</span></h5>
                         <h6>Status</h6>
-                        <p>{item.leavestatus}</p>
+                        <p>{item.leavestatus} </p>
                         <p>{item.leavestatus1}</p>
                     </div>
                             
