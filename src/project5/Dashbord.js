@@ -38,7 +38,7 @@ console.log(user)
 
         <div style={{ marginTop: "100px" }}>
 
-                <h4>Welcome Mr {user}</h4>
+                <h4>Welcome Mr/Mis {user}</h4>
             <div style={{ padding: "5px 0", border: "1px solid #ccc" }}>
 
                 {/* <h3 style={{ color: "blueviolet" }}>Welcome Mr:{user}</h3> */}

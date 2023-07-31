@@ -39,14 +39,14 @@ function ApplyLeave() {
   const toDateobj = new Date(leave.todate)
   const diffTime = Math.abs(fromdateobj - toDateobj)
   const diffDays = Number(Math.ceil(diffTime / (1000 * 60 * 60 * 24)))
-  
-let leaveshow;
-  if(diffDays> 0){
-    leaveshow=diffDays
-  }else{
-    leaveshow=0
+
+  let leaveshow;
+  if (diffDays > 0) {
+    leaveshow = diffDays
+  } else {
+    leaveshow = 0
   }
-  
+
   useEffect(() => {
     let hodData;
     try {
@@ -58,20 +58,20 @@ let leaveshow;
     setApprData(hodData)
   }, [toggle])
 
-  
-  
+
+
   const [data, setData] = useState([])
 
   console.log(data)
   const handleChange = (e) => {
-    
+
     setLeave((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
   console.log(leave)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    leave.leaveDays=diffDays
+    leave.leaveDays = diffDays
     setData([...data, leave])
 
     if (leave.fromdate === "") {
@@ -84,10 +84,10 @@ let leaveshow;
 
       alert("Please fill all the field")
 
-    }else if(user === null){
+    } else if (user === null) {
       navigateR("/emplogin")
     }
-     else {
+    else {
       localStorage.setItem("leavedata", JSON.stringify([...apprData, { ...leave, id: uuid() }]))
       setToggle(!toggle)
       setLeave({
@@ -118,33 +118,48 @@ let leaveshow;
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <div className='container' style={{ margin: "150px auto 0 auto"  }}>
 
-        <Box borderRadius="15px" border={"0.25px solid #ccc"} alignItems={"center"} padding={"40px"} display={"flex"} flexDirection={"column"} maxWidth={"450px"} margin={"100px auto"} boxShadow={"5px 5px 10px #ccc"} sx={{ ":hover": { boxShadow: "10px 10px 20px #ccc" } }}>
+        <div className='card shadow col-sm-5 mt-5 ' style={{ margin: "0 auto",borderRadius:"10px" }}>
+          <div className='card-body'>
+            <div className='row'>
+              <div className='col-sm-6 form-group'>
+                <label>From</label>
+                <input onChange={handleChange} type='date' className='form-control' name='fromdate' value={leave.fromdate}/>
+              </div>
+              <div className='col-sm-6'>
+                <label>To</label>
+                <input onChange={handleChange} type='date' className='form-control' name='todate' value={leave.todate} />
+              </div>
+            </div>
 
-          <Box display={"flex col-6"} >
-            <FormLabel><p>From</p>
-              <TextField onChange={handleChange} size='small' type='date' sx={{ mb: 2 }} name='fromdate' value={leave.fromdate} />
-            </FormLabel>
+            <div className='row'>
+              <div onChange={handleChange} className='col-sm-6 form-group' type='number' name='leaveDays' value={diffDays}>
+                Count Of Leave: {leaveshow}
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12 form-group'>
+                <label >Resaon</label>
+                <TextareaAutosize className='form-control' onChange={handleChange} minRows={3} name='leavereason' value={leave.leavereason} />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-7' style={{margin:"0 auto"}} >
+           
 
-            <FormLabel sx={{ ml: 2 }}><p>To</p>
-              <TextField onChange={handleChange} size='small' type='date' sx={{ mb: 2, }} name='todate' value={leave.todate} />
-            </FormLabel>
-            <div onChange={handleChange} style={{margin:"10px 0"}} type='number' name='leaveDays' value={diffDays} >Count Of Leave: {leaveshow}</div>
-            <FormLabel sx={{ mb: 3 }}><p>Reason</p>
-              <TextareaAutosize onChange={handleChange} minRows={3} style={{ width: "400px" }} name='leavereason' value={leave.leavereason} />
-            </FormLabel>
-            <h2 onChange={handleChange} style={{ width: "400px" }} name='leavestatus'></h2>
+                <Button className='btn' onClick={handleSubmit} size={"medium"} sx={{ mt: 2 }} type='submit' variant="contained">Submit</Button>
+                <Button className='btn' onClick={handleCancel} variant="outlined" size={"medium"} sx={{ mt: 2 }} style={{marginLeft:"15px"}} >Cancel</Button>
+          
+              </div>
+            </div>
 
+          </div>
+        </div>
+       
+      </div>
 
-            <Box style={{ width: "75%", margin: " 0 auto", textAlign: "center" }}>
-              <Button onClick={handleSubmit} size={"medium"} sx={{ mt: 2 }} type='submit' variant="contained">Submit</Button>
-              <Button onClick={handleCancel} style={{ marginLeft: "15px" }} variant="outlined" size={"medium"} sx={{ mt: 2 }} >Cancel</Button>
-            </Box>
-          </Box>
-        </Box>
-      </form>
-      {/* <Dashbord toggle={toggle}/> */}
+     
     </>
   )
 }

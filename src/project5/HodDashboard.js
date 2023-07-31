@@ -112,9 +112,18 @@ function HodDashboard() {
               <h5>Reason: {item.leavereason}</h5>
               <h5>from :{item.fromdate}</h5>
               <h5>To {item.todate}</h5>
-              
+              {item.leavestatus == "Pending" && <>
               <Button onClick={()=>handleaprove(item.id)}  variant="contained" sx={{ background: "green", color: "white" }}>Approve</Button>
               <Button onClick={()=>handleReject(item.id)} variant="contained" sx={{ background: "red", color: "white" }}>Reject</Button>
+              </>}
+
+              {item.leavestatus== "Approved" && <>
+                <h4 className='text-success'>Approved</h4>
+              </>}
+              {item.leavestatus== "Rejected" && <>
+                <h4 className='text-success'>Rejected</h4>
+              </>}
+
             </div>
 
         </>
