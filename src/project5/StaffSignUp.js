@@ -26,16 +26,16 @@ function StaffSignUp() {
     const [radionav, setRadionav] = useState()
 
 
-    const handleEmpRadio = (e) => {
-        setRadionav(e.target.value)
-        navigateR("/staffsignup")
+    // const handleEmpRadio = (e) => {
+    //     setRadionav(e.target.value)
+    //     navigateR("/staffsignup")
 
-    }
+    // }
 
-    const handleHodRadio = (e) => {
-        setRadionav(e.target.value)
-        navigateR("/hodsignup")
-    }
+    // const handleHodRadio = (e) => {
+    //     setRadionav(e.target.value)
+    //     navigateR("/hodsignup")
+    // }
 
     // code udpated on 14 july 2023
     useEffect(() => {
@@ -109,7 +109,7 @@ function StaffSignUp() {
             <form onSubmit={handleSubmit}>
 
                 <Box borderRadius="15px" border={"0.25px solid #ccc"} padding={"40px"} display={"flex"} flexDirection={"column"} maxWidth={"550px"} margin={"100px auto"} boxShadow={"5px 5px 10px #ccc"} sx={{ ":hover": { boxShadow: "10px 10px 20px #ccc" } }}>
-                    <div style={{ gap: "10px" }} className='d-flex'>
+                    {/* <div style={{ gap: "10px" }} className='d-flex'>
                         <div>
                             <FormLabel>Employee
                                 <input style={{ margin: "0 10px" }} type='radio' checked={radionav === "1"} name='radio' onChange={handleEmpRadio} size='small' value="1" margin='normal' sx={{ mb: 2 }} />
@@ -122,7 +122,7 @@ function StaffSignUp() {
                             </FormLabel>
                         </div>
 
-                    </div>
+                    </div> */}
 
 
                     <> <Box display={"flex"} gap={"25px"} maxWidth={"450px"}>

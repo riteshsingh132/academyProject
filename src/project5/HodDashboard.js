@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from './context/UserContext';
 
@@ -8,7 +8,7 @@ import { UserContext } from './context/UserContext';
 function HodDashboard() {
 
   const { state } = useContext(UserContext);
-  
+  // const navigateR = useNavigate()
 
   
   const [apprData, setApprData] = useState([])
@@ -23,7 +23,7 @@ function HodDashboard() {
   const [leaveCount2,setLeaveCount2]=useState(0)
   
 
-  console.log(logFind)
+  // console.log(logFind)
   // console.log(apprData.leavestatus)
   useEffect(() => {
     const hodData = JSON.parse(localStorage.getItem("leavedata"))
@@ -46,10 +46,10 @@ function HodDashboard() {
         )
       } )
       localStorage.setItem("leavedata",JSON.stringify([...filterStatus,{...ritesh,leavestatus:"Approved",leavestatus1:""
- 
-      }]))
-      stetoggle(true)
-     alert("Leave" + apprData.leavestatus )
+    }]))
+    stetoggle(true)
+    // navigateR("/hoddashbord")
+    //  alert("Leave" + apprData.leavestatus )
       
   }
 
