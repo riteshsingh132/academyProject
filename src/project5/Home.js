@@ -13,7 +13,7 @@ function Home() {
     
   return (
    <>
-   {/* <HeroPage/> */}
+   <HeroPage/>
    <div className='background-image'>
       {/* {heroImage} */}
    </div>
