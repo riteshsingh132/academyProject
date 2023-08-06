@@ -76,6 +76,8 @@ console.log(radionav)
             
             setnewData([...newdata, employeeData])
             localStorage.setItem("user", JSON.stringify([...newdata, employeeData]))
+            alert("You are Successfully registered")
+            navigateR("/hodlogin")
             setData(signupdetail)
         }
     }

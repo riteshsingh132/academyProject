@@ -8,7 +8,7 @@ import { UserContext } from './context/UserContext';
 function HodDashboard() {
 
   const { state } = useContext(UserContext);
-  // const navigateR = useNavigate()
+ 
 
   
   const [apprData, setApprData] = useState([])
@@ -19,8 +19,7 @@ function HodDashboard() {
   const location = useLocation();
   const logFind = location.state.logFind;
 
-  const [leaveCount1,setLeaveCount1]=useState(0)
-  const [leaveCount2,setLeaveCount2]=useState(0)
+
   
 
   // console.log(logFind)
@@ -48,7 +47,7 @@ function HodDashboard() {
       localStorage.setItem("leavedata",JSON.stringify([...filterStatus,{...ritesh,leavestatus:"Approved",leavestatus1:""
     }]))
     stetoggle(true)
-    // navigateR("/hoddashbord")
+    window.location.reload();
     //  alert("Leave" + apprData.leavestatus )
       
   }
@@ -100,7 +99,7 @@ function HodDashboard() {
       {apprData !==[] && apprData?.map((item) => {
         return <>
 
-            <div style={{ border: "1px solid #ccc", padding: "5px 15px", borderRadius: "10px" }}>
+            <div style={{ border: "1px solid #ccc", padding: "5px 15px", borderRadius: "10px", margin:"10px"}}>
               <h2>Emp Name:<span>{item.apEmpName}</span>
                 {/* {empname.map((det, i) => {
                   return <>

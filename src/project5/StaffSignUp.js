@@ -80,6 +80,8 @@ function StaffSignUp() {
             const employeeData = { ...empdata1, id: uuidv4() };
             setNewEmpData1([...newEmpData1, employeeData])
             localStorage.setItem("user1", JSON.stringify([...newEmpData1, employeeData]))
+            alert("You are Successfully registered")
+            navigateR("/emplogin")
             setEmpData1({
                 firstname: "",
                 lastname: "",
@@ -89,6 +91,7 @@ function StaffSignUp() {
                 password: "",
 
             })
+            
         }
     }
     console.log(newEmpData1);

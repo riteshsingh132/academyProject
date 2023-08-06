@@ -14,6 +14,7 @@ export default function Navbar() {
   
   const navigateR=useNavigate()
 
+  
   const staffhandle=(newRole)=>{
     navigateR("/emplogin")
     
@@ -43,7 +44,7 @@ export default function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             
           </Typography>
-          <Button onClick={homeHandle} color="inherit" style={{backgroundColor:"red"}}>HOME</Button>
+          <Button onClick={homeHandle} color="inherit">HOME</Button>
           <Button onClick={staffhandle} color="inherit">STAFF</Button>
           <Button onClick={hodhandle} color="inherit">HOD</Button>
         </Toolbar>

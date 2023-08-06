@@ -1,0 +1,27 @@
+.total_leave{
+   border:"1px solid #ccc";
+   border-radius:"5px";
+   padding:"5px 10px";
+   
+}
+
+.approved{
+    color:"green";
+    border:"1px solid #ccc";
+    border-radius:"5px";
+    padding:"5px 10px"
+}
+.canceled{
+    color:"red";
+    border:"1px solid #ccc";
+    border-radius:"5px";
+    padding:"5px 10px"; 
+
+} 
+.pending{
+    color:"blue";
+    border:"1px solid #ccc";
+    border-radius:"5px";
+    padding:"5px 10px"
+}
+    

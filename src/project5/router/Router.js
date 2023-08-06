@@ -14,6 +14,7 @@ import HodSignUp from '../HodSignUp'
 import Dashbord from '../Dashbord'
 
 
+
 export const router=createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<RootLayout/>}>
@@ -22,6 +23,7 @@ export const router=createBrowserRouter(
             <Route path='staffsignup' element={<StaffSignUp />} />
             <Route path='hodlogin' element={<HodSignIn/>} ></Route>
             <Route path='hodsignup' element={<HodSignUp/>} ></Route>
+            
             <Route path='applyleave' element={<ApplyLeave />} />
             <Route path='hoddashbord' element={<HodDashboard />} />
             <Route path='dashbord' element={<Dashbord />} />
