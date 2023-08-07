@@ -16,11 +16,14 @@ export default function Navbar() {
 
   
   const staffhandle=(newRole)=>{
-    navigateR("/emplogin")
+    navigateR("/login")
     
   }
   const hodhandle=()=>{
-    navigateR("/hodlogin")
+    
+    localStorage.removeItem("serverlogin")
+    navigateR("/")
+    
     
   }
   const homeHandle=()=>{
@@ -38,15 +41,15 @@ export default function Navbar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
-          >Hello
+          >RITESH
             {/* <MenuIcon /> */}
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             
           </Typography>
           <Button onClick={homeHandle} color="inherit">HOME</Button>
-          <Button onClick={staffhandle} color="inherit">STAFF</Button>
-          <Button onClick={hodhandle} color="inherit">HOD</Button>
+          <Button onClick={staffhandle} color="inherit">LOGIN</Button>
+          <Button onClick={hodhandle} color="inherit">LOGOUT</Button>
         </Toolbar>
       </AppBar>
     </Box>

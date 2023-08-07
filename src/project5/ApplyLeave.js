@@ -13,14 +13,16 @@ function ApplyLeave() {
 
   const navigateR = useNavigate()
 
+
   const { state } = useContext(UserContext);
   const { user } = state;
   console.log(user)
   // const location = useLocation();
   // const logFind = location.state.logFind;
 
-
-
+ 
+  const username = JSON.parse(localStorage.getItem("severlogin")) || []
+// console.log(username.firstname)
   const [toggle, setToggle] = useState(false)
   const [apprData, setApprData] = useState([])
 
@@ -84,9 +86,10 @@ function ApplyLeave() {
 
       alert("Please fill all the field")
 
-    } else if (user === null) {
-      navigateR("/emplogin")
-    }
+    } 
+    // else if (user === null) {
+    //   navigateR("/login")
+    // }
     else {
       localStorage.setItem("leavedata", JSON.stringify([...apprData, { ...leave, id: uuid() }]))
       setToggle(!toggle)
@@ -96,7 +99,7 @@ function ApplyLeave() {
         leavereason: "",
       })
 
-      navigateR("/dashbord")
+      navigateR("/home/EMP")
     }
   }
 

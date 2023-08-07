@@ -11,6 +11,10 @@ function Dashbord({ toggle }) {
     // const logFind = location.state.logFind;
     const { state } = useContext(UserContext);
     const { user } = state;
+
+    const nameofEmp= JSON.parse(localStorage.getItem("serverlogin")) ||[]
+
+
 console.log(user)
 
     const navigateR = useNavigate()
@@ -38,10 +42,10 @@ console.log(user)
 
         <div style={{ marginTop: "100px" }}>
 
-                <h4>Welcome Mr/Mis {user}</h4>
+                {/* <h4>Welcome Mr/Mis {user}</h4> */}
             <div style={{ padding: "5px 0", border: "1px solid #ccc" }}>
 
-                {/* <h3 style={{ color: "blueviolet" }}>Welcome Mr:{user}</h3> */}
+                <h3 style={{ color: "blueviolet" }}>Welcome Mr/Mis: {nameofEmp.firstname + nameofEmp.lastname }</h3>
                 <Button onClick={applyLeaveHandle} style={{ margin: "20px 20px" }} variant='contained'>ApplyLeave</Button>
 
             </div>
