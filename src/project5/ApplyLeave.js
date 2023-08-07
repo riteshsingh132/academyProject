@@ -123,7 +123,7 @@ function ApplyLeave() {
     <>
       <div className='container' style={{ margin: "150px auto 0 auto"  }}>
 
-        <div className='card shadow col-sm-5 mt-5 ' style={{ margin: "0 auto",borderRadius:"10px" }}>
+        <div className='card shadow col-sm-6 col-md-5 mt-5 ' style={{ margin: "0 auto",borderRadius:"10px" }}>
           <div className='card-body'>
             <div className='row'>
               <div className='col-sm-6 form-group'>
@@ -137,7 +137,7 @@ function ApplyLeave() {
             </div>
 
             <div className='row'>
-              <div onChange={handleChange} className='col-sm-6 form-group' type='number' name='leaveDays' value={diffDays}>
+              <div onChange={handleChange} className='col-sm-12 form-group' type='number' name='leaveDays' value={diffDays}>
                 Count Of Leave: {leaveshow}
               </div>
             </div>

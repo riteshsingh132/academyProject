@@ -134,18 +134,18 @@ function AuthSignUp() {
 
                     <> <Box display={"flex"} gap={"25px"} maxWidth={"450px"}>
                         <FormLabel>First Name
-                            <TextField onChange={handleChange} size='small' placeholder='Enter First Name' margin='normal' name='firstname' value={empdata1.firstname} sx={{ mb: 2 }} />
+                            <TextField onChange={handleChange} size='small'  margin='normal' name='firstname' value={empdata1.firstname} sx={{ mb: 2 }} />
                         </FormLabel>
                         <FormLabel>Last Name
-                            <TextField onChange={handleChange} size='small' placeholder='Enter Last Name' margin='normal' name='lastname' value={empdata1.lastname} sx={{ mb: 2 }} />
+                            <TextField onChange={handleChange} size='small'  margin='normal' name='lastname' value={empdata1.lastname} sx={{ mb: 2 }} />
                         </FormLabel>
                     </Box>
                         <Box display={"flex"} gap={"25px"} maxWidth={"450px"}>
                             <FormLabel>Email
-                                <TextField onChange={handleChange} size='small' placeholder='Enter Email' margin='normal' name='email' value={empdata1.email} sx={{ mb: 2 }} />
+                                <TextField onChange={handleChange} size='small'  margin='normal' name='email' value={empdata1.email} sx={{ mb: 2 }} />
                             </FormLabel>
                             <FormLabel>Contact
-                                <TextField onChange={handleChange} size='small' placeholder='Enter your Contact' margin='normal' name='contact' value={empdata1.contact} sx={{ mb: 2 }} />
+                                <TextField onChange={handleChange} size='small'  margin='normal' name='contact' value={empdata1.contact} sx={{ mb: 2 }} />
                             </FormLabel>
                         </Box>
                         <Box display={"flex"} gap={"25px"} maxWidth={"450px"}>
@@ -168,10 +168,10 @@ function AuthSignUp() {
                         </Box>
                         <Box display={"flex"} gap={"25px"} maxWidth={"450px"}>
                             <FormLabel>Username
-                                <TextField onChange={handleChange} size='small' placeholder='Enter username' margin='normal' name='username' value={empdata1.username} sx={{ mb: 2 }} />
+                                <TextField onChange={handleChange} size='small'  margin='normal' name='username' value={empdata1.username} sx={{ mb: 2 }} />
                             </FormLabel>
                             <FormLabel>Password
-                                <TextField onChange={handleChange} type='password' size='small' placeholder='Enter Password' margin='normal' name='password' value={empdata1.password} sx={{ mb: 2 }} />
+                                <TextField onChange={handleChange} type='password' size='small'  margin='normal' name='password' value={empdata1.password} sx={{ mb: 2 }} />
                             </FormLabel>
                         </Box>
                     </>

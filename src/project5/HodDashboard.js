@@ -89,12 +89,17 @@ function HodDashboard() {
       <h2>{item.todate}</h2>
      </> 
     })} */}
-      <div className=' mb-5 d-flex' style={{ border: "1px solid #ccc" }}>
+    <div className='card'>
+      <div className='card-body'>
+
+      <div className=' mb-5 pl-3' style={{ border: "1px solid #ccc" }}>
 
         {/* <h4>Welcome Mr {blogin.map((r) => { return <> <span>{r.firstname} {r.lastname}</span></> })}</h4> */}
         <h4>Welcome Mr {nameofEmp.firstname} {nameofEmp.lastname}</h4>
 
       </div>
+      </div>
+    </div>
       <div className='container d-flex mb-5 justify-content-center col-12 flex-wrap gap-3 flex-direction-row' style={{ textAlign: "center" }}>
       {apprData !==[] && apprData?.map((item) => {
         return <>
