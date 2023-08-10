@@ -57,15 +57,20 @@ function AuthSignUp() {
         e.preventDefault()
     }
 
-    const handleLogin = (e) => {
-
+    const handleSignUp = (e) => {
+        
+        const logdata = JSON.parse(localStorage.getItem("serverdata")) || []
+        const logFind = logdata.find((item) => item.username === empdata1.username || item.email === empdata1.email)
+        console.log(logFind)
+        
+    if(logFind){
+        alert("Either Email or either Username is already Registered")
+    }else{
 
         if (empdata1.firstname == "") {
-            alert("Please filld First Name")
-
+            alert("Please fill First Name")
         } else if (empdata1.lastname == "") {
             alert("Please fill the last name")
-
         } else if (empdata1.email == "") {
             alert("Please fill the correct email")
         } else if (empdata1.contact == "") {
@@ -91,6 +96,10 @@ function AuthSignUp() {
             })
             navigateR("/login")
         }
+    }
+
+       
+
     }
     // console.log(newEmpData1);
 
@@ -172,7 +181,7 @@ function AuthSignUp() {
                         </Box>
                     </>
 
-                    <Button onClick={() => handleLogin(empdata1.id)} sx={{ mt: 2 }} type='submit' variant="contained">SIGN UP</Button>
+                    <Button onClick={() => handleSignUp(empdata1.id)} sx={{ mt: 2 }} type='submit' variant="contained">SIGN UP</Button>
                     <Button onClick={handleClick} sx={{ mt: 2 }} >LOG IN</Button>
 
                 </Box>

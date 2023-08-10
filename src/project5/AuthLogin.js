@@ -11,21 +11,21 @@ function AuthLogin() {
 
   const { dispatch } = useContext(UserContext);
   const { state } = useContext(UserContext);
-console.log(state)
+  console.log(state)
 
-//   const handleSubmit1 = (e) => {
-//     e.preventDefault();
-//     // Assuming you have the staff data to pass
-//     const staffData = {
-//       // ...
-//     };
-//     // Dispatch an action to set the user data
-//     // dispatch({ type: 'SET_USER', payload: staffData });
+  //   const handleSubmit1 = (e) => {
+  //     e.preventDefault();
+  //     // Assuming you have the staff data to pass
+  //     const staffData = {
+  //       // ...
+  //     };
+  //     // Dispatch an action to set the user data
+  //     // dispatch({ type: 'SET_USER', payload: staffData });
 
-//     // Navigate to the HodDashbord component
+  //     // Navigate to the HodDashbord component
 
 
-//   }
+  //   }
 
   //help
 
@@ -33,15 +33,15 @@ console.log(state)
   const [empdata, setEmpData] = useState({
     username: "",
     password: "",
-    role:""
+    role: ""
   })
 
   // for use the name in leave  i will send the props to get the uer name who is login
   const [loginName, setLoginName] = useState("")
-  
+
   const handleChange = (e) => {
     const valDAta = { [e.target.name]: e.target.value }
-    
+
     setEmpData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
@@ -56,31 +56,17 @@ console.log(state)
     const logFind = logdata.find((item) => item.username === empdata.username && item.password === empdata.password)
     console.log(logFind)
 
-    if(logFind){
-        alert("login Successfull")
-        localStorage.setItem('serverlogin', JSON.stringify(logFind));
-        const staffData = logFind.firstname + " " + logFind.lastname;
-        
-        dispatch({ type: 'SET_USER', payload: staffData });
-        navigateR(`/home/${logFind.role}`)
-        
-    }else{
-        alert("You are not Registered")
+    if (logFind) {
+      alert("login Successfull")
+      localStorage.setItem('serverlogin', JSON.stringify(logFind));
+      const staffData = logFind.firstname + " " + logFind.lastname;
+
+      dispatch({ type: 'SET_USER', payload: staffData });
+      navigateR(`/home/${logFind.role}`)
+
+    } else {
+      alert("You are not Registered")
     }
-
-    // if (logFind !== undefined) {
-    //   // logdata me data agar blank milega to logfind undefined hoga isliye as isko ocndition me liye hai
-    //   const staffData = logFind.firstname + " " + logFind.lastname;
-    //   console.log(staffData)
-    //   localStorage.setItem('serverlogin', JSON.stringify(...newEmpData, logdata));
-    //   dispatch({ type: 'SET_USER', payload: staffData });
-    // //   navigateR("/dashbord", { state: { logFind } })
-    //     //  navigateR("/home/EMP")
-    //     navigateR(`/home/${logFind.role}`)
-    // } else {
-    //   alert("You are not Registered")
-
-    // }
   }
 
 
@@ -101,7 +87,7 @@ console.log(state)
             </FormLabel>
 
             <FormLabel>Password
-              <TextField onChange={handleChange} type='password' size='small'  margin='normal' name='password' value={empdata.password} sx={{ mb: 2 }} />
+              <TextField onChange={handleChange} type='password' size='small' margin='normal' name='password' value={empdata.password} sx={{ mb: 2 }} />
             </FormLabel>
           </Box>
 

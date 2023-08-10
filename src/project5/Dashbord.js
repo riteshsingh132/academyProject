@@ -65,7 +65,7 @@ function Dashbord({ toggle }) {
                                 </div>
                                 <div className='col-sm-3 col-md-2' style={{textAlign: "center", color: "green", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
                                     <h4>{rejectCount}</h4>
-                                    <h4>Cancled</h4>
+                                    <h4>Cancelled</h4>
                                 </div>
                                 <div className='col-sm-3 col-md-2' style={{textAlign: "center", color: "green", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
                                     <h4>{pendingCount}</h4>
