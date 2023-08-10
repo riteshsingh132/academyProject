@@ -97,11 +97,11 @@ console.log(state)
 
           <Box display={"flex"} gap={"25px"} maxWidth={"450px"}>
             <FormLabel>Username
-              <TextField onChange={handleChange} size='small' placeholder='Enter username' margin='normal' name='username' value={empdata.username} sx={{ mb: 2 }} />
+              <TextField onChange={handleChange} size='small' margin='normal' name='username' value={empdata.username} sx={{ mb: 2 }} />
             </FormLabel>
 
             <FormLabel>Password
-              <TextField onChange={handleChange} type='password' size='small' placeholder='Enter Password' margin='normal' name='password' value={empdata.password} sx={{ mb: 2 }} />
+              <TextField onChange={handleChange} type='password' size='small'  margin='normal' name='password' value={empdata.password} sx={{ mb: 2 }} />
             </FormLabel>
           </Box>
 

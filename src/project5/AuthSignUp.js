@@ -22,7 +22,7 @@ function AuthSignUp() {
     const navigateR = useNavigate()
 
     const [newEmpData1, setNewEmpData1] = useState([])
-    console.log(empdata1)
+    console.log(empdata1.role)
 
     const [radionav, setRadionav] = useState()
 
@@ -68,13 +68,10 @@ function AuthSignUp() {
 
         } else if (empdata1.email == "") {
             alert("Please fill the correct email")
-
         } else if (empdata1.contact == "") {
-
             alert("Please fill the correct email")
         } else if (empdata1.username == "") {
             alert("Please fill the correct email")
-
         } else if (empdata1.password == "") {
             alert("Please fill the passrowd")
         } else {
@@ -91,7 +88,6 @@ function AuthSignUp() {
                 username: "",
                 password: "",
                 role:""
-
             })
             navigateR("/login")
         }
@@ -116,16 +112,16 @@ function AuthSignUp() {
                 <Box borderRadius="15px" border={"0.25px solid #ccc"} padding={"40px"} display={"flex"} flexDirection={"column"} maxWidth={"550px"} margin={"100px auto"} boxShadow={"5px 5px 10px #ccc"} sx={{ ":hover": { boxShadow: "10px 10px 20px #ccc" } }}>
                     <div style={{ gap: "10px" }} className='d-flex'>
                         <div>
-                            <FormLabel>Employee
+                                <input  type='radio' name="role" id='empRadio' onChange={handleChange} size='small' value="EMP" margin='normal' sx={{ mb: 2 }} />
+                            <FormLabel sx={{margin:"0 10px"}} htmlFor='empRadio'> Employee
                                 {/* <input type='radio' name='role' onChange={handleChange} value="EMP" checked={radionav === "EMP"}/> */}
-                                <input style={{ margin: "0 10px" }} type='radio' name="role" onChange={handleChange} size='small' value="EMP" margin='normal' sx={{ mb: 2 }} />
                             </FormLabel>
                         </div>
 
                         <div>
-                            <FormLabel >HOD
+                                <input style={{ margin: "0 10px" }} id='hodRadio' type='radio' name="role" onChange={handleChange} size='small' value="HOD" margin='normal' sx={{ mb: 2 }} />
+                            <FormLabel htmlFor='hodRadio'>HOD
                             {/* <input type='radio' name='role' onChange={handleChange} value="HOD"/> */}
-                                <input style={{ margin: "0 10px" }} type='radio' name="role" onChange={handleChange} size='small' value="HOD" margin='normal' sx={{ mb: 2 }} />
                             </FormLabel>
                         </div>
 

@@ -63,6 +63,7 @@ function HodDashboard() {
  
       }]))
       stetoggle(false)
+      window.location.reload();
     // setBossdata({
     //   aprovestatus: "Approve",
     //   rejectstate: "Rejected"
@@ -123,10 +124,10 @@ function HodDashboard() {
 
               {item.leavestatus== "Approved" && <>
                 <h4 className='text-success'>Approved</h4>
-              </>}
-              {item.leavestatus== "Rejected" && <>
+              </> || item.leavestatus1== "Rejected" && <>
                 <h4 className='text-success'>Rejected</h4>
-              </>}
+              </> }
+             
 
             </div>
 
