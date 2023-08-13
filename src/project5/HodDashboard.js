@@ -20,7 +20,7 @@ function HodDashboard() {
   // const logFind = location.state.logFind;
 
 
-  const nameofEmp= JSON.parse(localStorage.getItem("serverlogin")) ||[]
+  const nameofEmp= JSON.parse(localStorage.getItem("empNametoHod")) ||[]
 
   // console.log(logFind)
   // console.log(apprData.leavestatus)
@@ -93,10 +93,10 @@ function HodDashboard() {
     <div className='card'>
       <div className='card-body'>
 
-      <div className=' mb-5 pl-3' style={{ border: "1px solid #ccc" }}>
+      <div className=' mb-5 pl-3 shadow rounded' style={{ border: "1px solid #ccc",color:"purple" ,backgroundColor:"skyblue"}}>
 
         {/* <h4>Welcome Mr {blogin.map((r) => { return <> <span>{r.firstname} {r.lastname}</span></> })}</h4> */}
-        <h4>Welcome Mr {nameofEmp.firstname} {nameofEmp.lastname}</h4>
+        <h4 style={{margin:"0.3rem  0"}}> Welcome Mr {nameofEmp.firstname} {nameofEmp.lastname}</h4>
 
       </div>
       </div>
@@ -104,28 +104,30 @@ function HodDashboard() {
       <div className='container d-flex mb-5 justify-content-center col-12 flex-wrap gap-3 flex-direction-row' style={{ textAlign: "center" }}>
       {apprData !==[] && apprData?.map((item) => {
         return <>
-
+  
             <div style={{ border: "1px solid #ccc", padding: "5px 15px", borderRadius: "10px", margin:"10px"}}>
-              <h2>Emp Name:<span>{item.apEmpName}</span>
+              <h6>Emp Name: <span>{item.apEmpName}</span>
                 {/* {empname.map((det, i) => {
                   return <>
 
                     <span>{det.firstname} {det.lastname}</span>
                   </>
                 })} */}
-              </h2>
-              <h5>Reason: {item.leavereason}</h5>
-              <h5>from :{item.fromdate}</h5>
-              <h5>To {item.todate}</h5>
+              </h6>
+              <h6>Reason: {item.leavereason}</h6>
+              <h6>From: {item.fromdate}</h6>
+              <h6>To: {item.todate}</h6>
               {item.leavestatus == "Pending" && <>
+              <div className=' col-sm-12 d-flex justify-content-between' style={{gap:"10px"}}>
               <Button onClick={()=>handleaprove(item.id)}  variant="contained" sx={{ background: "green", color: "white" }}>Approve</Button>
               <Button onClick={()=>handleReject(item.id)} variant="contained" sx={{ background: "red", color: "white" }}>Reject</Button>
+              </div>
               </>}
 
               {item.leavestatus== "Approved" && <>
                 <h4 className='text-success'>Approved</h4>
               </> || item.leavestatus1== "Rejected" && <>
-                <h4 className='text-success'>Rejected</h4>
+                <h4 className='text-danger'>Rejected</h4>
               </> }
              
 

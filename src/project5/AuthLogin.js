@@ -48,6 +48,7 @@ function AuthLogin() {
 
   const [newEmpData, setNewEmpData] = useState([])
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setNewEmpData([...newEmpData, empdata])
@@ -57,8 +58,8 @@ function AuthLogin() {
     console.log(logFind)
 
     if (logFind) {
-      alert("login Successfull")
       localStorage.setItem('serverlogin', JSON.stringify(logFind));
+      localStorage.setItem('empNametoHod', JSON.stringify(logFind));
       const staffData = logFind.firstname + " " + logFind.lastname;
 
       dispatch({ type: 'SET_USER', payload: staffData });

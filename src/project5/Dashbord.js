@@ -43,36 +43,40 @@ function Dashbord({ toggle }) {
 
     return (
         <>
-            <div className='container col-sm-12' style={{ margin:"100px 0 0 0" }}>
+            <div className='container col-sm-12' style={{ margin: "100px 0 0 0" }}>
                 <div className='card'>
                     <div className='card-body'>
                         <div className=''>
                             <div className='row'>
                                 <div>
-                                    <h3 style={{ color: "blueviolet" }}>Welcome Mr/Mis: {nameofEmp.firstname + nameofEmp.lastname}</h3>
+                                    <h3 style={{ color: "blueviolet" }}>Welcome {nameofEmp.firstname + " " + nameofEmp.lastname}</h3>
                                     <Button onClick={applyLeaveHandle} style={{ margin: "20px 20px" }} variant='contained'>ApplyLeave</Button>
                                 </div>
                             </div>
-                            <div className='row' style={{gap:"5px"}}>
-                                
-                                <div className='col-sm-3 col-md-2' style={{textAlign: "center", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
+                            <div className='row' style={{ gap: "5px" }}>
+
+                                <div className='col-sm-3 col-md-2' style={{ textAlign: "center", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
                                     <h4>{apldata.length}</h4>
                                     <h4>Total Leave</h4>
                                 </div>
-                                <div className='col-sm-3 col-md-2' style={{textAlign: "center", color: "green", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
+                                <div className='col-sm-3 col-md-2' style={{ textAlign: "center", color: "green", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
                                     <h4>{approveCount}</h4>
                                     <h4>Approved</h4>
                                 </div>
-                                <div className='col-sm-3 col-md-2' style={{textAlign: "center", color: "green", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
+                                <div className='col-sm-3 col-md-2' style={{ textAlign: "center", color: "red", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
                                     <h4>{rejectCount}</h4>
                                     <h4>Cancelled</h4>
                                 </div>
-                                <div className='col-sm-3 col-md-2' style={{textAlign: "center", color: "green", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
+                                <div className='col-sm-3 col-md-2' style={{ textAlign: "center", color: "purple", border: "1px solid #ccc", borderRadius: "5px", padding: "5px 10px" }}>
                                     <h4>{pendingCount}</h4>
                                     <h4>Pending</h4>
                                 </div>
+
+                               
+
+
                             </div>
-                            <hr></hr>
+                            {/* <hr></hr> */}
 
                         </div>
 
@@ -80,25 +84,24 @@ function Dashbord({ toggle }) {
 
 
                 </div>
-                            <div className=' col-sm-12 d-flex mb-5 justify-content-center  flex-wrap'  >
+                <div className=' col-sm-12 d-flex mb-5 mt-4 justify-content-center  flex-wrap'  >
 
-                                {apldata !== [] && apldata?.map((item) => {
-                                    return <div className='col-sm-5 col-md-3 flex-direction-row m-1' style={{ border: "1px solid #ccc", borderRadius: "10px" }}>
+                    {apldata !== [] && apldata?.map((item) => {
+                        return <div className='col-sm-5 col-md-3 flex-direction-row m-1' style={{ border: "1px solid #ccc", borderRadius: "10px" }}>
 
-                                        <p>Leave for {item.fromdate} to {item.todate}</p>
-                                        <p>Number of days {item.leaveDays}</p>
-                                        <p>From Date:{item.todate}:</p>
+                            <p>Leave for {item.fromdate} to {item.todate}</p>
+                            <p>Number of days: {item.leaveDays}</p>
+                            <p>From Date: {item.todate}:</p>
+                            <p>Reason: <span>{item.leavereason}</span></p>
+                            <p>Status: <span className='text-success h5'> {item.leavestatus} </span> 
+                            <span className='text-danger mb-3 h5'> {item.leavestatus1} </span></p>
 
-                                        <h5>Reason:<span>{item.leavereason}</span></h5>
-                                        <h6>Status</h6>
-                                        <p>{item.leavestatus} </p>
-                                        <p>{item.leavestatus1}</p>
-                                    </div>
+                        </div>
 
 
-                                })}
+                    })}
 
-                            </div>
+                </div>
 
 
             </div>

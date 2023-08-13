@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 function AuthSignUp() {
 
     const [isSignup, setIsSignup] = useState(false)
-
+    const [msg,setMsg]=useState(true)
     const [empdata1, setEmpData1] = useState({
         firstname: "",
         lastname: "",
@@ -16,7 +16,7 @@ function AuthSignUp() {
         contact: "",
         username: "",
         password: "",
-        role:"",
+        role:"EMP",
     })
 
     const navigateR = useNavigate()
@@ -83,7 +83,12 @@ function AuthSignUp() {
             const employeeData = { ...empdata1, id: uuidv4() };
             setNewEmpData1([...newEmpData1, employeeData])
             localStorage.setItem("serverdata", JSON.stringify([...newEmpData1, employeeData]))
-            alert("You are Successfully registered")
+            
+           
+            navigateR("/login")
+          
+               
+            
             // navigateR("/emplogin")
             setEmpData1({
                 firstname: "",
@@ -110,18 +115,21 @@ function AuthSignUp() {
     }
 
     const handleClick = () => {
-        // navigateR("/emplogin")
+        navigateR("/login")
     }
 
     return (
         <>
+        <div className="animate" style={{animation: "myAnimation 2s ease infinite"}}>
+      Hello, CSS Animation!
+    </div>
 
             <form onSubmit={handleSubmit}>
 
                 <Box borderRadius="15px" border={"0.25px solid #ccc"} padding={"40px"} display={"flex"} flexDirection={"column"} maxWidth={"550px"} margin={"100px auto"} boxShadow={"5px 5px 10px #ccc"} sx={{ ":hover": { boxShadow: "10px 10px 20px #ccc" } }}>
                     <div style={{ gap: "10px" }} className='d-flex'>
                         <div>
-                                <input  type='radio' name="role" id='empRadio' onChange={handleChange} size='small' value="EMP" margin='normal' sx={{ mb: 2 }} />
+                                <input  type='radio' name="role" id='empRadio' defaultChecked onChange={handleChange} size='small' value="EMP" margin='normal' sx={{ mb: 2 }} />
                             <FormLabel sx={{margin:"0 10px"}} htmlFor='empRadio'> Employee
                                 {/* <input type='radio' name='role' onChange={handleChange} value="EMP" checked={radionav === "EMP"}/> */}
                             </FormLabel>

@@ -20,9 +20,9 @@ function ApplyLeave() {
   // const location = useLocation();
   // const logFind = location.state.logFind;
 
- 
+
   const username = JSON.parse(localStorage.getItem("severlogin")) || []
-// console.log(username.firstname)
+  // console.log(username.firstname)
   const [toggle, setToggle] = useState(false)
   const [apprData, setApprData] = useState([])
 
@@ -86,7 +86,7 @@ function ApplyLeave() {
 
       alert("Please fill all the field")
 
-    } 
+    }
     // else if (user === null) {
     //   navigateR("/login")
     // }
@@ -121,14 +121,14 @@ function ApplyLeave() {
 
   return (
     <>
-      <div className='container' style={{ margin: "150px auto 0 auto"  }}>
+      <div className='container' style={{ margin: "150px auto 0 auto" }}>
 
-        <div className='card shadow col-sm-6 col-md-5 mt-5 ' style={{ margin: "0 auto",borderRadius:"10px" }}>
+        <div className='card shadow col-sm-6 col-md-5 mt-5 ' style={{ margin: "0 auto", borderRadius: "10px" }}>
           <div className='card-body'>
             <div className='row'>
               <div className='col-sm-6 form-group'>
                 <label>From</label>
-                <input onChange={handleChange} type='date' className='form-control' name='fromdate' value={leave.fromdate}/>
+                <input onChange={handleChange} type='date' className='form-control' name='fromdate' value={leave.fromdate} />
               </div>
               <div className='col-sm-6'>
                 <label>To</label>
@@ -157,12 +157,14 @@ function ApplyLeave() {
               </div>
             </div>
 
+
+
           </div>
         </div>
-       
+
       </div>
 
-     
+
     </>
   )
 }
